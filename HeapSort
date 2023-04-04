@@ -1,0 +1,105 @@
+import java.util.*;
+public class HeapSort<E> {
+	static int x = -1;
+    static String []heap = new String[1000];
+
+    static void heapForm(String k){
+        String temp;
+
+        x++;
+        heap[x] = k;
+        int child = x;
+        int index = x / 2;
+
+        while (index >= 0) {
+            if (heap[index].compareTo(heap[child]) > 0){    
+
+                temp = heap[index];                          
+                heap[index] = heap[child];                  //swap
+                heap[child] = temp;
+                child = index;
+
+                index = index / 2;                          //up in heap 
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+
+
+    static void heapSort(){
+        int left, right;
+
+        while (x >= 0){
+            String k;
+            k = heap[0];
+            System.out.print(k + " ");
+            heap[0] = heap[x];
+            x = x - 1;
+            String tmp;
+            int index = 0;
+            int length = x;
+            left = 1;
+            right = left + 1;
+            while (left <= length) {
+                if (heap[index].compareTo(heap[left]) <= 0 &&
+                        heap[index].compareTo(heap[right]) <= 0){
+                    break;
+                }
+
+                else{
+                    if (heap[left].compareTo(heap[right])< 0){
+                        tmp = heap[index];
+                        heap[index] = heap[left];
+                        heap[left] = tmp;
+                        index = left;
+                    }
+
+                    else{
+                        tmp = heap[index];
+                        heap[index] = heap[right];
+                        heap[right] = tmp;
+                        index = right;
+                    }
+                }
+                left = 2 * left;
+                right = left + 1;
+            }
+        }
+    }
+
+
+    static void sort(String k[], int n){
+        for (int i = 0; i < n; i++){
+            heapForm(k[i]);
+        }
+        heapSort();
+    }
+    
+    public static void main(String[] args) {
+        String array[] = {"JailhouseRock,ElvisPresley,Elvis'GoldenRecords,1957\r\n",
+        		"HotelCalifornia,Eagles,HotelCalifornia(2013Remastered),1976\r\n",
+        		"BillieJean,MichaelJackson,Thriller25SuperDeluxeEdition,1982\r\n",
+        		"BohemianRhapsody,Queen,ANightAtTheOpera(2011Remastered),1975\r\n",
+        		"LetItBe,TheBeatles,LetItBe(Remastered),1970\r\n",
+        		"(I Can't Get No)Satisfaction,TheRollingStones,OutOfOurHeads,1965\r\n",
+        		"Africa,TOTO,TotoIV,1982\r\n",
+        		"MoreThanAFeeling,Boston,Boston,1976\r\n",
+        		"Stayin'Alive,BeeGees,Greatest,1977\r\n",
+        		"SmellsLikeTeenSpirit,Nirvana,NeverMind(DeluxeEdition),1991\r\n",
+        		"EveryBreathYouTake,ThePolice,Synchronicity(Remastered2003),1983\r\n",
+        		"StandByMe,BenE,king,DontPlayThatSong(Mono),1986\r\n",
+        		"NothingCompares2U,SineadO'Connor,IDoNotWantWhatIHaven'tGotten,1990\r\n",
+        		"Don'tStopBelievin',Journey,Escape(BonusTrackVersion),1981\r\n",
+        		"BeforeYourBirth,TheVices,LookingForFaces,2021\r\n",
+        		"Imagine,JohnLennon,Imagine,1971\r\n",
+        		"IWasMadeForLovin'You,KISS,Dynasty,1979\r\n",
+        		"BeatIt,MichaelJackson,Thriller25SuperDeluxeVersion,1982\r\n",
+        		"DejaVu,PanArcadia,DejaVu,2021\r\n",
+        		"WholelottaLove,LedZeppelin,LedZeppelinII(1994Remastered),1969\r\n"};
+        int n = array.length;
+        sort(array, n);
+}
+}
