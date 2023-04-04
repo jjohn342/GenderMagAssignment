@@ -1,0 +1,32 @@
+import java.util.*;
+public interface JJohnQueue<T> {
+	//public int jjohnQueue(T o);
+
+	//method for addSong, deleteAll, isEmpty, peekSong, pushSong 
+	//method for removeSong, size
+	public class NewSongs<T>{
+		Object list;
+		public T addSong() {
+			return null;
+		}
+		public T deleteAll() {
+			return null;
+		}
+		public T isEmpty() {
+			return null;
+		}
+		public T peekSong() {
+			return null;
+		}
+		public T pushSong() {
+			return null;
+		}
+		public T removeSong() {
+			return null;
+		}
+		public T size() {
+			return null;
+		}
+	}
+	
+}
