@@ -1,0 +1,131 @@
+import java.util.*;
+public class JJohnHeap<T> implements JJohnQueue<T>{
+	public static void main(String[] args) {
+		//JJohnHeap<String> queue = new JJohnHeap<String>();
+		PriorityQueue<String> pQueue= new PriorityQueue<String>(Collections.reverseOrder());
+		
+		//adds songs to priority queue using add 
+		pQueue.add("JailhouseRock,ElvisPresley,Elvis'GoldenRecords,1957\r\n");
+		pQueue.add("HotelCalifornia,Eagles,HotelCalifornia(2013Remastered),1976\r\n");
+		pQueue.add("BillieJean,MichaelJackson,Thriller25SuperDeluxeEdition,1982\r\n");
+		pQueue.add("BohemianRhapsody,Queen,ANightAtTheOpera(2011Remastered),1975\r\n");
+		pQueue.add("LetItBe,TheBeatles,LetItBe(Remastered),1970\r\n");
+		pQueue.add("(I Can't Get No)Satisfaction,TheRollingStones,OutOfOurHeads,1965\r\n");
+		pQueue.add("Africa,TOTO,TotoIV,1982\r\n");
+		pQueue.add("MoreThanAFeeling,Boston,Boston,1976\r\n");
+		pQueue.add("Stayin'Alive,BeeGees,Greatest,1977\r\n");
+		pQueue.add("SmellsLikeTeenSpirit,Nirvana,NeverMind(DeluxeEdition),1991\r\n");
+		pQueue.add("EveryBreathYouTake,ThePolice,Synchronicity(Remastered2003),1983\r\n");
+		pQueue.add("StandByMe,BenE,king,DontPlayThatSong(Mono),1986\r\n");
+		pQueue.add("NothingCompares2U,SineadO'Connor,IDoNotWantWhatIHaven'tGotten,1990\r\n");
+		pQueue.add("Don'tStopBelievin',Journey,Escape(BonusTrackVersion),1981\r\n");
+		pQueue.add("BeforeYourBirth,TheVices,LookingForFaces,2021\r\n");
+		pQueue.add("Imagine,JohnLennon,Imagine,1971\r\n");
+		pQueue.add("IWasMadeForLovin'You,KISS,Dynasty,1979\r\n");
+		pQueue.add("BeatIt,MichaelJackson,Thriller25SuperDeluxeVersion,1982\r\n");
+		pQueue.add("DejaVu,PanArcadia,DejaVu,2021\r\n");
+		pQueue.add("WholelottaLove,LedZeppelin,LedZeppelinII(1994Remastered),1969\r\n");
+
+		//prints priority element
+		System.out.println("First: " + pQueue.peek());
+		System.out.println();
+		System.out.println();
+		System.out.println();
+
+		
+		//prints all elements 
+		System.out.println("Queue Elements: ");
+		Iterator iter = pQueue.iterator();
+		while(iter.hasNext()) {
+			System.out.println(iter.next());
+		}
+		System.out.println();
+		System.out.println();
+		System.out.println();
+
+		
+		//removes priority element 
+		pQueue.poll();
+		System.out.println("Remove element: ");
+		Iterator<String> iter2 = pQueue.iterator();
+		while(iter2.hasNext()) {
+			System.out.println(iter2.next());
+		}
+		System.out.println();
+		System.out.println();
+		System.out.println();
+
+		
+		//removes first element (Jailhouse Rock) 
+		pQueue.remove("JailhouseRock,ElvisPresley,Elvis'GoldenRecords,1957\r\n");
+		System.out.println("Remove first element: ");
+		Iterator<String> iter3 = pQueue.iterator();
+		while(iter3.hasNext()) {
+			System.out.println(iter3.next());
+		}
+		System.out.println();
+		System.out.println();
+		System.out.println();
+
+		
+		//removes second element (Hotel California) 
+		pQueue.remove("HotelCalifornia,Eagles,HotelCalifornia(2013Remastered),1976\r\n");
+		System.out.println("Remove second element: ");
+		Iterator<String> iter4 = pQueue.iterator();
+		while(iter4.hasNext()) {
+			System.out.println(iter4.next());
+		}
+		System.out.println();
+		System.out.println();
+		System.out.println();
+
+		
+		//removes third element (Billie Jean) 
+		pQueue.remove("BillieJean,MichaelJackson,Thriller25SuperDeluxeEdition,1982\r\n");
+		System.out.println("Remove third element: ");
+		Iterator<String> iter5 = pQueue.iterator();
+		while(iter5.hasNext()) {
+			System.out.println(iter5.next());
+		}
+		System.out.println();
+		System.out.println();
+		System.out.println();
+
+		
+		//removes fourth element (Bohemian Rhapsody) 
+		pQueue.remove("BohemianRhapsody,Queen,ANightAtTheOpera(2011Remastered),1975\r\n");
+		System.out.println("Remove fourth element: ");
+		Iterator<String> iter6 = pQueue.iterator();
+		while(iter6.hasNext()) {
+			System.out.println(iter6.next());
+		}
+		System.out.println();
+		System.out.println();
+		System.out.println();
+
+		
+		//removes fifth element (Let It Be) 
+		pQueue.remove("LetItBe,TheBeatles,LetItBe(Remastered),1970\r\n");
+		System.out.println("Remove fifth element: ");
+		Iterator<String> iter7 = pQueue.iterator();
+		while(iter7.hasNext()) {
+			System.out.println(iter7.next());
+		}
+		System.out.println();
+		System.out.println();
+		System.out.println();
+
+		
+		//check element 
+		boolean q = pQueue.contains("Africa,TOTO,TotoIV,1982\r\n");
+		System.out.println("Priority Queue contains Africa,TOTO,TotoIV,1982 " + q);
+		
+		//print array 
+		Object[] array = pQueue.toArray();
+		System.out.println("Array Value: ");
+		
+		for(int i = 0; i < array.length; i++) {
+			System.out.println("Value is: " + array[i].toString());
+		}
+	}
+}
